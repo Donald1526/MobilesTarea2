@@ -21,9 +21,9 @@ fun main() {
 
 
     println("\n### Probando cuenta inactiva ###")
-    val cuentaInactiva = CuentaAhorro(9000f, 5.0f)
-    cuentaInactiva.Imprimir()
-    cuentaInactiva.Consignar(100f)
-    cuentaInactiva.Retirar(500f)
+    val cuentadeNaze = CuentaAhorro(9000f, 5.0f)
+    cuentadeNaze.Imprimir()
+    cuentadeNaze.Consignar(100f)
+    cuentadeNaze.Retirar(500f)
 //meu dios naze
 }
