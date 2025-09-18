@@ -5,7 +5,6 @@ class CuentaCorriente(
 
     var sobregiro: Float = 0f
 
-    // Redefinimos el método retirar para permitir sobregiros.
     override fun Retirar(cantidad: Float) {
         if (cantidad > 0) {
             if (cantidad <= saldo) {
@@ -21,7 +20,6 @@ class CuentaCorriente(
         }
     }
 
-    // Redefinimos el método consignar para cubrir el sobregiro primero.
     override fun Consignar(cantidad: Float) {
         if (cantidad > 0) {
             var cantidadReal = cantidad
@@ -35,7 +33,6 @@ class CuentaCorriente(
                 }
             }
             if(cantidadReal > 0) {
-                // Llamamos a la implementación original de consignar solo si queda dinero
                 super.Consignar(cantidadReal)
             } else {
                 println("Consignación usada para cubrir sobregiro. Sobregiro restante: $$sobregiro")
@@ -45,13 +42,11 @@ class CuentaCorriente(
         }
     }
 
-    // El extracto mensual invoca directamente al del padre.
     override fun ExtractoMensual() {
         super.ExtractoMensual()
         println("Extracto mensual generado para Cuenta Corriente.")
     }
 
-    // Redefinimos el método imprimir.
     override fun Imprimir() {
         println("--- CUENTA CORRIENTE ---")
         println("Saldo: $$saldo")
